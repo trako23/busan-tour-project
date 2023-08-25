@@ -48,6 +48,8 @@ Team TRAKO입니다.
 - github 원격 저장소에 push하면 github action을 통해서 클라이언트와 서버 각각에 맞게 배포 자동화
 - 로그인 인증 방식에는 JWT를 사용하며 refresh token을 더해 보안성을 높임
 
+
+
 ### Client
 
 #### 개요
