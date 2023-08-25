@@ -62,7 +62,7 @@ Team TRAKO입니다.
 
 #### 버전
 
-- react 버전 - ![Badge](https://img.shields.io/badge/version-18.2.0-#3f49c4.svg)
+- react 버전 - ![Badge](https://img.shields.io/badge/version-18.2.0-3f49c4.svg)
 
 
 
@@ -83,7 +83,7 @@ Team TRAKO입니다.
 
 #### 버전
 
-- spring boot 버전 - ![Badge](https://img.shields.io/badge/version-'default'-#3f49c4.svg)
+- spring boot 버전 - ![Badge](https://img.shields.io/badge/version-'default'-3f49c4.svg)
 
 
 
@@ -95,7 +95,7 @@ Team TRAKO입니다.
 
 #### 버전
 
-- PostgreSQL 버전 - ![Badge](https://img.shields.io/badge/version-11-#3f49c4.svg)
+- PostgreSQL 버전 - ![Badge](https://img.shields.io/badge/version-11-3f49c4.svg)
 
 
 
@@ -263,44 +263,3 @@ Team TRAKO입니다.
 - 어떤 부분이 작동하지 않거나 충돌 등의 에러가 발생한 경우뿐만 아니라 meeting 등 각종 이벤트에 대해서 추가 및 선택
 - 타이틀은 '[이슈 요소 #number] text'로 진행 => 이슈, PR은 생성 후에도 프로젝트 작업 등에서 타이틀 수정이 가능 (Issue, Todo, PR 등)
 
-### Project -Workflows
-
-- 프로젝트명은 '<u>Webcash Project Board'</u>
-- 프로젝트는 LHSK 조직에 들어가서 상단탭에서 'projects'를 클릭하거나 'integrated-banking-system' 레포지토리에 접속하여 상단 탭에서 Projects를 선택
-
-![project-board-image](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\project-board-1.png)
-
-- issue를 생성하고 Pull Request를 요청할 경우, Choose column 컬럼으로 아이템이 자동으로 추가가 되니, 항목에 맞는 컬럼으로 이동 필요
-- Pull Request에 대한 Review가 이루어졌을 경우, Reviewed 항목으로 자동 추가
-- Pull Request가 assign되었을 경우, Done 항목으로 자동 추가
-
-### Project - Roadmap
-
-#### (1) Roadmap
-
-![project-roadmap-image](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\project-roadmap-1.png)
-
-- Webcash Project Board 제목 바로 밑에 있는 탭 'board' 옆의 화살표를 클릭하면, Layout 3가지를 볼 수 있으며, 일정은 Board와 Roadmap에서 확인 가능
-
-
-
-#### (2) 이슈 및 작업에 일정 등록하기
-
-![add-date-into-issue](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\new-config-2.png)
-
--  일정에 등록하려는 항목을 클릭하면 우측 옵션 항목에서 아까 생성한 항목들을 볼 수 있으며, 'Enter a date'를 클릭하여 날짜 설정이 가능 
--  설정 후에는 우측 상단의 'X'를 클릭
-
-
-
-#### (3) 일정 등록을 위한 Date Field 생성 (참고 사항)
-
-*이미 등록되어 있는 start, end 필드 사용
-
-![project-roadmap-image](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\new-config-field-1.png)
-
-- 일정을 등록하기 위해서는 캘린더 우측 상단에 있는 Date fields에서 필드 생성을 해야 하는데, State와 End 날짜에 해당하는 필드를 각각 설정해줘야 함
-
-![create-field-2](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\config-field-2.png)
-
-- Filed name으로 start #'num', end #'num' 로 필드를 생성 ex) #1 start 등 예제에서는 start 'write srs document'
