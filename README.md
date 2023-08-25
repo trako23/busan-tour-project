@@ -62,7 +62,7 @@ Team TRAKO입니다.
 
 #### 버전
 
-- react 버전 - ![Badge](https://img.shields.io/badge/version-18.2.0-{ color }.svg?{ style(optional) })
+- react 버전 - ![Badge](https://img.shields.io/badge/version-18.2.0-#3f49c4.svg)
 
 
 
@@ -83,7 +83,7 @@ Team TRAKO입니다.
 
 #### 버전
 
-- spring boot 버전 - ![Badge](https://img.shields.io/badge/version-'default'-{ color }.svg?{ style(optional) })
+- spring boot 버전 - ![Badge](https://img.shields.io/badge/version-'default'-#3f49c4.svg)
 
 
 
@@ -95,7 +95,7 @@ Team TRAKO입니다.
 
 #### 버전
 
-- PostgreSQL 버전 - ![Badge](https://img.shields.io/badge/version-11-{ color }.svg?{ style(optional) })
+- PostgreSQL 버전 - ![Badge](https://img.shields.io/badge/version-11-#3f49c4.svg)
 
 
 
