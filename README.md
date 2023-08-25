@@ -213,30 +213,42 @@ Team TRAKO입니다.
 
   * 작업 후, 해당 브랜치로 원격 저장소에 push
 
-![git-push-1](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\initial-push-branch-pr.png)
+![git-push-1](https://github.com/trako23/busan-tour-project/assets/50001184/e79826f8-c4b6-488a-87ab-afd3954cdc07)
+
+
 
   * Compare & pull request 버튼 클릭 후, write에서 마크다운 형식으로 코멘트를 작성 ( 프리뷰에서 확인 가능)
 
-![git-push-2](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\open-pull-request.png)
+![git-push-2](https://github.com/trako23/busan-tour-project/assets/50001184/5a61ab42-effd-4327-8c70-ebfae5164a54)
+
+
 
   * 각 옵션에서 Reviewers를 눌려서 review를 요청할 사람 선택
   * pull request를 수락해줄 Assignees 사람 선택
   * Labels에서는 해당 pr이 이슈를 해결한 것인지, 새로 진행한 것인지 각 작업에 맞는 라벨을 선택하여 클릭
   * 프로젝트에서는 내역에서 LHSK에 맞는 프로젝트 선택
 
-![open-issue](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\open-issue.png)
+![open-issue](https://github.com/trako23/busan-tour-project/assets/50001184/3c265383-2738-4753-adcc-522ab051c93c)
+
+
 
   * 정상적으로 세팅 후, create pull request를 하면 open 문구 나옴
   * 그 후, 프로젝트에 들어가면 Choose Columns에 PR한 내역이 나오게 됨
+
+
 
 #### (2) 원격 저장소에 브랜치가 존재할 경우
 
 - 이미 브랜치가 존재하는 경우에는 자동으로 pull request 요청이 이루어지지 않음
 - 그래서 github 탭의 Pull requests로 들어가서 직접 생성을 해야 함
 
-![new-pull-request](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\new-pull-request.png)
+![new-pull-request](https://github.com/trako23/busan-tour-project/assets/50001184/68bbffb5-1e74-4cd8-ba22-257bca2ab38a)
+
+
 
 - 이후는 (1)의 과정과 같이 동일하게 진행
+
+
 
 ### PR 생성 후, review & assign pull request
 
@@ -244,17 +256,19 @@ Team TRAKO입니다.
 
 [변경 전]
 
-![assign-merge](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\request-review.png)
+![assign-merge](https://github.com/trako23/busan-tour-project/assets/50001184/a0e8e788-f3d6-4b12-be7b-1762b420ddf8)
 
 [변경 후]
 
-![require-review](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\require-review.png)
+![require-review](https://github.com/trako23/busan-tour-project/assets/50001184/487a35e7-747d-4505-a74a-77ff41064b58)
+
+
 
 - 리뷰가 필요한 경우, 아래 comment쪽에서 서로 진행하도록 정했으나, 최소 한 명 이상의 팀원이 리뷰를 하도록 지정
 - Comment 등 작성 후, 이상 요소가 없다면 merge
 - 이 외에도 rebase 등이 가능하나 상황에 맞춰서 진행
 
-![merged](C:\Users\USER\Desktop\git-project\integrated-banking-system\setupImages\merged.png)
+![merged](https://github.com/trako23/busan-tour-project/assets/50001184/b6493284-5108-4636-9aeb-af28000b3759)
 
 - Merge를 confirm하면 open에서 merged라고 변경됨
 
@@ -262,4 +276,64 @@ Team TRAKO입니다.
 
 - 어떤 부분이 작동하지 않거나 충돌 등의 에러가 발생한 경우뿐만 아니라 meeting 등 각종 이벤트에 대해서 추가 및 선택
 - 타이틀은 '[이슈 요소 #number] text'로 진행 => 이슈, PR은 생성 후에도 프로젝트 작업 등에서 타이틀 수정이 가능 (Issue, Todo, PR 등)
+
+
+
+### Project - Table
+
+- 프로젝트명은 '<u>Trako Tour Project'</u>
+- 프로젝트는 Trako 조직에 들어가서 상단탭에서 'projects'를 클릭하거나 'busan-tour-project' 레포지토리에 접속하여 상단 탭에서 Projects를 선택
+- 제일 처음 나오는 탭은 설정에 따라 다르지만 메인 탭을 Table로 하였을 경우, 다음과 같은 화면이 나옴
+
+![project-board-image](https://github.com/trako23/busan-tour-project/assets/50001184/89aaf42a-4d0c-49f4-86fb-c13b16199d23)
+
+
+
+- 항목을 추가하기 위해서는 왼쪽 아래의 '+'버튼을 클릭
+
+  <img src="https://github.com/trako23/busan-tour-project/assets/50001184/47be9cae-53a3-435b-b9be-a255bada67df" alt="create data in table image" />
+
+  
+
+- issue를 생성하거나 'Add items to project'를 클릭하여 생성된 issue 또는 pull request를 선택할 수 있음
+
+  <img src="https://github.com/trako23/busan-tour-project/assets/50001184/e71d2157-e059-4f54-ac2c-af3b8dff2b90" alt="add itmes to project image" />
+
+  
+
+- 필요한 컬럼은 테이블 우측 상단에 '+' 버튼으로 추가
+
+- title에 데이터 추가 후, assigness, Status 등 요소를 추가
+
+  - status 내 항목은 Project의 Board에서 추가 가능
+
+  <img src="https://github.com/trako23/busan-tour-project/assets/50001184/b1129a2b-c01a-491a-b8d7-be87b598e297" alt="choose status image" />
+
+
+
+### Project - Board
+
+- 탭에서 Main 또는 Table 이 외의 탭이 없을 경우, 탭에서 'New View'를 선택하고 Board를 선택
+
+- Board를 클릭하면 다음과 같은 화면이 나옴
+
+  <img src="https://github.com/trako23/busan-tour-project/assets/50001184/8efc7698-f8f8-4b24-8029-8f06f7db2753" alt="board image" />
+
+  
+
+- 처음에는 세 항목만 있지만 우측의 '+'버튼으로 추가가 가능
+
+- 해당 항목들이 앞서 Table의 Status를 클릭했을 때 나오는 요소이며, Table에서 특정 Status 값 선택 시 해당하는 Board에 추가
+
+- issue를 생성하고 Pull Request를 요청할 경우, Choose column 컬럼으로 아이템이 자동으로 추가가 되니, 항목에 맞는 컬럼으로 이동 필요한데 이는 'Workflows'를 통해 가능
+
+- Board 우측 상단에 있는 '...'을 클릭하고 나온 메뉴에서 'Workflows' 클릭
+
+  <img src="https://github.com/trako23/busan-tour-project/assets/50001184/aa09db55-82a7-4c3d-a814-fafb87b6d5aa" alt="board menu image"/>
+
+  
+
+- 기본 workflow 중에서 사용하고 싶은 요소를 'ON'하거나 edit하여 특정 이벤트가 발생했을 때, 어떤 항목에 자동으로 넣고 싶은지 Status를 선택
+
+#### 
 
