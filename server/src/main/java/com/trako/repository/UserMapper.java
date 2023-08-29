@@ -7,4 +7,6 @@ import com.trako.model.User;
 @Mapper //mybatis_annotation
 public interface UserMapper {
 	void saveUser(User user);
+
+	User findUser(String id);
 }

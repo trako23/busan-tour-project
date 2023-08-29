@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.trako.model.User;
-import com.trako.repository.UserMapper;
+import com.trako.service.UserService;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -20,11 +20,12 @@ import lombok.extern.slf4j.Slf4j;
 public class UserController {
 	
 	@Autowired
-	private UserMapper userMapper; 
-	
-	@PostMapping("member")
+	private UserService userService; 
+	//가입하기
+	@PostMapping("join")
 	public void join(@ModelAttribute User user) {
-		userMapper.saveUser(user);
+		userService.saveUser(user);
 	}
+	
 	
 }
