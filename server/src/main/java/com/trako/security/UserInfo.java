@@ -1,4 +1,4 @@
-package com.trako.config;
+package com.trako.security;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -8,11 +8,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.trako.model.User;
 
+import lombok.Data;
 import lombok.Getter;
 
 
 
-@Getter
+@Data
 public class UserInfo implements UserDetails {
 
 	private User user;
@@ -21,12 +22,12 @@ public class UserInfo implements UserDetails {
 		this.user = user;
 	}
 	
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Collection<GrantedAuthority> collect = new ArrayList<>();
-		//collect.add(new SimpleGrantedAuthority(member.getRole().name()));
-		//collect.add(new SimpleGrantedAuthority(user.getUser_code().name());
-		return null;
+		collect.add(new SimpleGrantedAuthority(user.getUser_code().name()));
+		return collect;
 	}
 
 	@Override
@@ -36,7 +37,7 @@ public class UserInfo implements UserDetails {
 
 	@Override
 	public String getUsername() {
-		return user.getName();
+		return user.getId();
 	}
 
 	@Override

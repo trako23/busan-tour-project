@@ -2,21 +2,36 @@ package com.trako.config;
 
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.trako.security.JwtAuthenticationFilter;
+import com.trako.security.JwtTokenProvider;
 
 import lombok.RequiredArgsConstructor;
 
 
 @RequiredArgsConstructor
-@EnableWebSecurity
+@EnableWebSecurity //스프링 security지원을 가능하게 함
 public class SecurityConfig {
+	//JwtTokenProvider dependency injection
+	private final JwtTokenProvider jwtTokenProvider;
 	
 	
-	private final CustomAuthFailureHandler customAuthFailureHandler;
+	//private final CustomAuthFailureHandler customAuthFailureHandler;
+	
+	@Bean
+    AuthenticationManager authenticationManager(
+    AuthenticationConfiguration authenticationConfiguration) throws Exception {
+        return authenticationConfiguration.getAuthenticationManager();
+    }
 	
 	@Bean
 	public PasswordEncoder encoder() {
@@ -28,31 +43,16 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http
 			.csrf().disable()
-			.headers().frameOptions().disable()
+			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
+			//HTTP Basic Authentication과 Form Based Authentication을 사용하지 않는다
+			.formLogin().disable()
+			.httpBasic().disable()
 			.authorizeRequests()
-			.antMatchers("/", "/user/join", "/user/login", "/user/login-failed", "/user/logout",
-					"/user/idCheck").permitAll()
-			.antMatchers("/api/**").permitAll()
-			.antMatchers("/css/*", "/js/*", "/favioon.ioo", "/error").permitAll()
-			.antMatchers("/admin/**").hasAnyRole("ADMIN")
-			.anyRequest().authenticated()
+			.antMatchers("/user/**","/api/**").permitAll()
 			.and()
-			.formLogin()
-			.usernameParameter("id") //로그인 파라미터 지정
-			.loginPage("/user/login")	//GET 방식
-			.loginProcessingUrl("/user/login")  //POST방식
-			.defaultSuccessUrl("/user/login-success")
-			//.failureUrl("/user/login-failed")
-			.failureHandler(customAuthFailureHandler)
-			.and()
-			.logout()
-			.logoutUrl("/user/logout")
-			.logoutSuccessUrl("/")
-			.invalidateHttpSession(true)
-			.deleteCookies("JSESSIONID");
-			
-			
+			.addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),
+                UsernamePasswordAuthenticationFilter.class);
 		return http.build();
 		
 	}
