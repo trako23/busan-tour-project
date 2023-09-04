@@ -11,6 +11,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.trako.security.JwtAuthenticationFilter;
 import com.trako.security.JwtTokenProvider;
@@ -20,13 +22,19 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @EnableWebSecurity //스프링 security지원을 가능하게 함
-public class SecurityConfig {
+public class SecurityConfig implements WebMvcConfigurer {
 	//JwtTokenProvider dependency injection
 	private final JwtTokenProvider jwtTokenProvider;
 	
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/**")
+				.allowedOrigins("*")
+				.allowedMethods("GET","POST")
+				.maxAge(300);  // 설정 시간만큼 pre-flight 리퀘스트 캐싱
+	}
 	
 	//private final CustomAuthFailureHandler customAuthFailureHandler;
-	
 	@Bean
     AuthenticationManager authenticationManager(
     AuthenticationConfiguration authenticationConfiguration) throws Exception {
