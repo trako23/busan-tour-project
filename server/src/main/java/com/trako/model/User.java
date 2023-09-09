@@ -1,9 +1,6 @@
 package com.trako.model;
 
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
 //@NoArgsConstructor
 @Data
 public class User {
